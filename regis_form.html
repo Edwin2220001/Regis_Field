@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+
+<body>
+    <div class="container mt-5" style="max-width: 50%;">
+        <h2 class="display-12 mb-4">Registration Form</h2>
+        <ul class="nav nav-tabs mb-4" id="registrationTabs" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active" id="step1-tab" data-bs-toggle="tab" data-bs-target="#step1" type="button" role="tab">Step 1</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link disabled" id="step2-tab" data-bs-toggle="tab" data-bs-target="#step2" type="button" role="tab">Step 2</button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link disabled" id="step3-tab" data-bs-toggle="tab" data-bs-target="#step3" type="button" role="tab">Step 3</button>
+            </li>
+        </ul>
+
+        <form id="registrationForm" class="row g-3 needs-validation mt-3" novalidate method="post">
+            <div class="tab-content">
+                <div class="tab-pane show active" id="step1" role="tabpanel">
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label for="firstName" class="form-label">First Name</label>
+                            <input type="text" name="first_name" class="form-control" id="firstName" required>
+                            <div class="invalid-feedback">Enter first name.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="lastName" class="form-label">Last Name</label>
+                            <input type="text" name="last_name" class="form-control" id="lastName" required>
+                            <div class="invalid-feedback">Enter last name.</div>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label for="contactNo" class="form-label">Contact No.</label>
+                            <input type="tel" name="contact_no" id="contactNo" class="form-control" required>
+                            <div class="invalid-feedback">Enter contact no.</div>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="email" class="form-label">E-mail</label>
+                            <input type="email" name="email" id="email" class="form-control" required>
+                            <div class="invalid-feedback">Enter e-mail.</div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label">Gender</label>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="male" value="male" required>
+                            <label class="form-check-label" for="male">Male</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="female" value="female">
+                            <label class="form-check-label" for="female">Female</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="gender" id="other" value="other">
+                            <label class="form-check-label" for="other">Other</label>
+                        </div>
+                        <div class="invalid-feedback">Select gender</div>
+                    </div>
+
+                    <button class="btn btn-primary-sm btn-success" id="step1-next" type="submit">Next</button>
+                </div>
+
+                <div class="tab-pane" id="step2" role="tabpanel">
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label for="exampleFormControlTextarea1" class="form-label">Address Line 1</label>
+                            <input type="text" class="form-control" id="addressLine1" name="addressLine1" placeholder="address 1">
+                            <div class="invalid-feedback">Enter address 1</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="exampleFormControlTextarea1" class="form-label">Address Line 2</label>
+                            <input type="text" class="form-control" id="addressLine2" name="addressLine2" placeholder="address 2">
+                            <div class="invalid-feedback">Enter address 2</div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="example" class="form-label">City</label>
+                            <input type="" class="form-control" required>
+                            <div class="invalid-feedback">Enter a city.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="example" class="form-label">State</label>
+                            <select class="form-select" id="">
+                                <option selected disabled value="">Choose...</option>
+                                <option value="">Kerala</option>
+                                <option value="">Tamil Nadu</option>
+                                <option value="">Karnataka</option>
+                            </select>
+                            <div class="invalid-feedback">Select a state.</div>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary-sm btn-success" id="step2-next" type="submit">Next</button>
+
+                </div>
+
+                <div class="tab-pane" id="step3" role="tabpanel">
+                    <div class="row g-3 mb-3">
+                        <div class="col-md-6">
+                            <label for="username" class="col-form-label">Username</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="usernamePrepend"><i class="bi bi-person-fill"></i></span>
+                                
+                                <input type="text" class="form-control" id="username" aria-describedby="usernamePrepend" placeholder="Username" required>
+                                <div class="invalid-feedback">Please choose a username</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <div class="col-md-6">
+                            <label for="password" class="col-form-label">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text" id="passwordPrepend"><i class="bi bi-lock-fill"></i></span>
+                                <input type="password" class="form-control" id="password" aria-describedby="passwordHelpInline" required minlength="8" maxlength="20">
+                                
+                                <div class="invalid-feedback">Password is required. Length between 8-20 chars.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 pt-3">
+                        <div class="col-12">
+                            <div class="form-check">
+                                <input class="form-check-input" name="agree_terms" type="checkbox" value="" id="agreeTerms" required>
+                                <label class="form-check-label" for="agreeTerms">Agree to terms and conditions</label>
+                                <div class="invalid-feedback">You must agree before submitting.</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" id="submit_btn" type="submit">Submit</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        (function () {
+            'use strict';
+            const forms = document.querySelectorAll('.needs-validation');
+            Array.from(forms).forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    }
+                    form.classList.add('was-validated');
+                }, false);
+            });
+        })();
+
+        document.addEventListener('DOMContentLoaded', () => {   
+            // Get all tabs
+            const tabs = document.querySelectorAll('.nav-link');
+            // Set an Array of next buttons
+            const nextButtons = [
+                document.getElementById('step1-next'),
+                document.getElementById('step2-next'),
+            ];
+            // Add click event listeners to "Next" buttons
+            nextButtons.forEach((button, index) => {
+                button.addEventListener('click', () => validateAndMove(index));
+
+            });
+
+            function validateAndMove(currentIndex) {
+                // get the current index and increment it by 1
+                const currentTabContent = document.querySelector(`#step${currentIndex + 1}`);
+                // get all the form inputs
+                const formInputs = currentTabContent.querySelectorAll('input');
+
+                let isValid = true;
+
+                // Loop the inputs, check validity of each element
+                formInputs.forEach(input => {
+                    if (!input.checkValidity()) {
+                        isValid = false;
+                    }
+                    input.classList.add('was-validated');
+                });
+
+                if (isValid) {
+                    enableTab(currentIndex + 1);
+                    switchTab(currentIndex + 1);
+                }
+            }
+
+            function enableTab(index) {
+                const tab = tabs[index];
+                tab.classList.remove('disabled');
+                tab.removeAttribute('tabindex');
+            }
+
+            function switchTab(index) {
+                const tab = tabs[index];
+                const tabTrigger = new bootstrap.Tab(tab);
+                tabTrigger.show();
+            }
+        });
+    </script>
+
+
+</body>
+
+</html>
